@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Content = () => {
+
+    const [value, setValue] = useState()
+
     return (
         <>
             <section className='main'>
