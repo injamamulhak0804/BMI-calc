@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Content = () => {
 
@@ -11,6 +11,10 @@ const Content = () => {
         const originalHeightVal = height * height;
         setBmi((valueW / originalHeightVal).toFixed(1));
     }
+
+    useEffect(() => {
+        handleSubmit()
+    }, [])
 
     return (
         <>
@@ -56,11 +60,11 @@ const Content = () => {
                             </div>
                             <div className="result">
                                 {bmi &&
-                                 <span className='bmi'>
+                                    <span className='bmi'>
                                         Your BMI = <span className='value'>
-                                            {bmi} kg / m2 </span>                                 
+                                            {bmi} kg / m2 </span>
                                     </span>}
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>
