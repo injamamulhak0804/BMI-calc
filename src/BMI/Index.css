@@ -61,7 +61,7 @@ input::-webkit-inner-spin-button {
     margin-left: 130px;
 }
 .result{
-    background: #000;
+    /* background: #000; */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;

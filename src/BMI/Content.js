@@ -2,7 +2,15 @@ import React, { useState } from 'react'
 
 const Content = () => {
 
-    const [value, setValue] = useState()
+    const [valueH, setValueH] = useState('')
+    const [valueW, setValueW] = useState('')
+    const [bmi, setBmi] = useState('')
+
+    const handleSubmit = () => {
+        const height = valueH / 100;
+        const originalHeightVal = height * height;
+        setBmi((valueW / originalHeightVal).toFixed(1));
+    }
 
     return (
         <>
@@ -22,6 +30,8 @@ const Content = () => {
                                     <label htmlFor="height">Height <br />
                                         <input
                                             maxLength={3}
+                                            value={valueH}
+                                            onChange={(e) => setValueH(e.target.value)}
                                             id='height'
                                         /> <span>cm</span>
                                     </label>
@@ -30,15 +40,21 @@ const Content = () => {
                                     <label htmlFor="weight">Weight <br />
                                         <input
                                             maxLength={3}
+                                            value={valueW}
+                                            onChange={(e) => setValueW(e.target.value)}
                                             id='weight'
                                         /> <span>kg</span>
                                     </label>
                                 </div>
                             </div>
                             <div className="submit mt-5">
-                                <button type="button" className='btn'>calculate</button>
+                                <button type="button"
+                                    onClick={handleSubmit}
+                                    className='btn'>
+                                    calculate
+                                </button>
                             </div>
-                            <div className="result"> Result: Okay</div>
+                            <div className="result"> {bmi} {bmi && <span>kg / m2</span>}</div>
                         </div>
                     </div>
                 </main>
