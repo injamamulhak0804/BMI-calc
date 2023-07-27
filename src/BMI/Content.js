@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 const Content = () => {
 
-    const [valueH, setValueH] = useState('')
-    const [valueW, setValueW] = useState('')
+    const [valueH, setValueH] = useState('185')
+    const [valueW, setValueW] = useState('65')
     const [bmi, setBmi] = useState('')
 
     const handleSubmit = () => {
@@ -54,7 +54,13 @@ const Content = () => {
                                     calculate
                                 </button>
                             </div>
-                            <div className="result"> {bmi} {bmi && <span>kg / m2</span>}</div>
+                            <div className="result">
+                                {bmi &&
+                                 <span className='bmi'>
+                                        Your BMI = <span className='value'>
+                                            {bmi} kg / m2 </span>                                 
+                                    </span>}
+                                </div>
                         </div>
                     </div>
                 </main>

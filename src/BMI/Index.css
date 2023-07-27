@@ -61,8 +61,28 @@ input::-webkit-inner-spin-button {
     margin-left: 130px;
 }
 .result{
-    /* background: #000; */
     width: 100%;
-    max-width: 800px;
+    max-width: 75%;
+    margin: 30px auto;
+}
+.bmi{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.value{
+    color: #000;
+}
+
+@media only screen and (max-width: 769px) {
+  .result{
+    width: 100%;
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 406px) {
+  .submit .btn{
+    width: 100%;
     margin: 0 auto;
+    }
 }
